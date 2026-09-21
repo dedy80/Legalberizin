@@ -18,6 +18,7 @@ export const NAV_LINKS = [
     { label: "Manifesto", href: "#manifesto", testid: "nav-manifesto-link" },
     { label: "Estimasi", href: "#estimasi", testid: "nav-estimasi-link" },
     { label: "Testimoni", href: "#testimoni", testid: "nav-testimoni-link" },
+    { label: "Artikel", href: "#artikel", testid: "nav-artikel-link" },
     { label: "Kontak", href: "#kontak", testid: "nav-kontak-link" },
 ];
 

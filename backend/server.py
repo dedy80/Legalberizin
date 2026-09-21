@@ -63,7 +63,33 @@ async def list_consultations():
     return items
 
 
+class Article(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    slug: str
+    title: str
+    category: str
+    excerpt: str
+    read_time: str
+    published_at: str
+    sections: list
+
+
+@api_router.get("/articles", response_model=List[Article])
+async def list_articles():
+    return await db.articles.find({}, {"_id": 0}).sort("published_at", -1).to_list(100)
+
+
+@api_router.get("/articles/{slug}", response_model=Article)
+async def get_article(slug: str):
+    doc = await db.articles.find_one({"slug": slug}, {"_id": 0})
+    if not doc:
+        raise HTTPException(status_code=404, detail="Artikel tidak ditemukan")
+    return doc
+
+
 app.include_router(api_router)
+
+from articles_seed import ARTICLES
 
 app.add_middleware(
     CORSMiddleware,
@@ -72,6 +98,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+async def seed_articles():
+    for article in ARTICLES:
+        await db.articles.update_one({"slug": article["slug"]}, {"$set": article}, upsert=True)
 
 logging.basicConfig(
     level=logging.INFO,
