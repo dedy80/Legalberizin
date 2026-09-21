@@ -1,0 +1,140 @@
+{
+  "project_name": "Legalberizin.id",
+  "app_type": "landing_page",
+  "language": "Bahasa Indonesia",
+  "brand_archetype": "LUXURY_SWISS_HYBRID",
+  "design_philosophy": "High-end Indonesian legal & corporate licensing consultancy website (Awwwards-level art direction). Combines architectural dark obsidian aesthetic with rich amber gold accents, editorial typography, numbered manifesto chapters, interactive 7-service showcase, kinetic scroll transitions, guided consultation wizard, and floating WhatsApp lead generator.",
+  "colors": {
+    "background_dark": "#0B0D12",
+    "background_card": "#121620",
+    "background_card_hover": "#1A202C",
+    "border_subtle": "#262D3D",
+    "border_gold": "rgba(212, 175, 55, 0.35)",
+    "primary_gold": "#D4AF37",
+    "primary_gold_hover": "#E5C158",
+    "accent_amber": "#F59E0B",
+    "text_main": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "text_gold": "#E5C158",
+    "whatsapp_green": "#25D366",
+    "glass_bg": "rgba(18, 22, 32, 0.75)",
+    "overlay_dark": "rgba(11, 13, 18, 0.65)"
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond, Playfair Display, serif",
+    "body_font": "Plus Jakarta Sans, Outfit, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "font_imports": [
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    ],
+    "scale": {
+      "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-[1.1]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight",
+      "subsection_h3": "text-xl sm:text-2xl font-sans font-semibold",
+      "body_lead": "text-base sm:text-lg text-slate-300 leading-relaxed font-light",
+      "body_regular": "text-sm sm:text-base text-slate-300 leading-relaxed",
+      "label_overline": "text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold"
+    }
+  },
+  "image_urls": {
+    "hero_building": "https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBqYWthcnRhJTIwc2t5c2NyYXBlciUyMGNvcnBvcmF0ZSUyMGxlZ2FsJTIwb2ZmaWNlJTIwYXJjaGl0ZWN0dXJlJTIwZXhlY3V0aXZlJTIwYnVzaW5lc3MlMjBtZWV0aW5nJTIwZGVzayUyMGNvbnN1bHRhdGlvbiUyMGRvY3VtZW50JTIwc2lnbmluZ3xlbnwwfHx8fDE3OTAwMDk0NjN8MA&ixlib=rb-4.1.0&q=85",
+    "jakarta_skyline": "https://images.unsplash.com/photo-1562367072-fea5c7eb8748?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBqYWthcnRhJTIwc2t5c2NyYXBlciUyMGNvcnBvcmF0ZSUyMGxlZ2FsJTIwb2ZmaWNlJTIwYXJjaGl0ZWN0dXJlJTIwZXhlY3V0aXZlJTIwYnVzaW5lc3MlMjBtZWV0aW5nJTIwZGVzayUyMGNvbnN1bHRhdGlvbiUyMGRvY3VtZW50JTIwc2lnbmluZ3xlbnwwfHx8fDE3OTAwMDk0NjN8MA&ixlib=rb-4.1.0&q=85",
+    "consultation_handshake": "https://images.pexels.com/photos/8112180/pexels-photo-8112180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "legal_meeting": "https://images.pexels.com/photos/8112153/pexels-photo-8112153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "key_sections": [
+    {
+      "name": "Header & Nav Bar",
+      "type": "Crystal Glass Sticky Header",
+      "details": "Includes Legalberizin.id logo with gold icon accent, navigation links (Layanan, Manifesto, Syarat & Ketentuan, Simulasi Biaya, Kontak), status pill ('Terakreditasi KBLI 2026'), dark/light theme toggle, and primary CTA button 'Konsultasi Gratis'. Fully responsive with mobile drawer."
+    },
+    {
+      "name": "Kinetic Hero Section",
+      "type": "Line-by-line Reveal & Parallax Background",
+      "details": "Dramatic masked text entrance using Framer Motion. Headline: 'Perizinan Usaha Legal & Terstruktur untuk Pertumbuhan Bisnis Indonesia'. Subtitle highlights speed, compliance, & hassle-free execution. Interactive quick stats counter (500+ PT Resmi, 99.8% Approval BPOM, 24/7 Support). CTA actions trigger consultation form scroll or direct WhatsApp chat."
+    },
+    {
+      "name": "Editorial Marquee",
+      "type": "Slow Drift Ribbon",
+      "details": "Continuous low-speed drifting ticker featuring services: PT / PT PMA • VIRTUAL OFFICE JAKARTA • BPOM KOSMETIK IMPORT • SERTIFIKAT KBLI 46441 • NOTIFIKASI EDAR • ALKES IMPORT • YAYASAN & CV • LAYANAN DIGITAL LEGAL."
+    },
+    {
+      "name": "7 Key Services Showcase Grid",
+      "type": "Interactive Bento & Filterable Grid",
+      "details": "Showcases all 7 key services demanded by problem statement: 1. Badan Usaha (PT Pendirian, PT PMD/PMA Perorangan, CV, Yayasan), 2. Virtual Office (Zonasi Komersial & Alamat Resmi Jakarta), 3. Sertifikat Standar KBLI 46441 (Perdagangan Besar Bahan Farmasi), 4. Izin BPOM Kosmetik Import, 5. Notifikasi Izin Edar Kosmetik Import, 6. Izin Alkes Import (Alat Kesehatan), 7. Layanan Digital (Web Legal, Sistem OSS RBA, E-Faktur, Pendaftaran Merek HAKI). Each card includes service scope, lead time, document requirements accordion, and instant inquiry trigger."
+    },
+    {
+      "name": "Numbered Manifesto Chapters Section",
+      "type": "Editorial Storytelling Stack",
+      "details": "Chapter 01: Kepastian Hukum Tanpa Birokrasi Berbelit. Chapter 02: Transparansi Biaya & Bebas Pungli Hidden Fees. Chapter 03: Akselerasi Investasi PMD/PMA Sesuai Regulasi Terbaru 2026. Chapter 04: Pendampingan End-to-End dari Akta hingga Sertifikat Standar OSS RBA."
+    },
+    {
+      "name": "KBLI & BPOM Regulatory Compliance Calculator / Quiz",
+      "type": "Interactive Tool",
+      "details": "Allows clients to select their business model (Import Kosmetik, Alkes, Perdagangan KBLI 46441, Pendirian PT) to instantly see required legal documents, estimated duration (e.g. 3-7 hari kerja), and mandatory licenses needed."
+    },
+    {
+      "name": "Guided Consultation Form (Lead Generator)",
+      "type": "Multi-step Form with Extra Guided Questions",
+      "details": "Guided form with questions: 1. Jenis Layanan Yang Dibutuhkan, 2. Status Legalitas Saat Ini, 3. Target Waktu Operasional, 4. Domisili Perusahaan, 5. Nama Lengkap & WhatsApp. On submission, offers direct WhatsApp pre-filled chat or instant callback request with Sonner toast confirmation."
+    },
+    {
+      "name": "Testimonials & Case Studies",
+      "type": "Social Proof Carousel / Grid",
+      "details": "Real-world stories of CEOs, Founders, Beauty Brand Owners (BPOM Import), and Medical Suppliers (Alkes Import) who successfully launched using Legalberizin.id."
+    },
+    {
+      "name": "Floating WhatsApp CTA & Quick Chat Modal",
+      "type": "Floating Sticky Widget",
+      "details": "Bottom-right glowing WhatsApp button (`data-testid='whatsapp-floating-btn'`) with notification badge and quick modal launcher containing pre-written consultation prompts."
+    },
+    {
+      "name": "High-Contrast Luxury Footer",
+      "type": "Footer",
+      "details": "Complete contact info (Office Address: SCBD/Mega Kuningan Jakarta, Operating Hours: Senin-Jumat 08:30-18:00 WIB, Email, Phone), quick navigation, legal disclaimer, & copyright."
+    }
+  ],
+  "motion_and_interactions": {
+    "library": "framer-motion",
+    "smooth_scroll": "Lenis smooth scroll integration",
+    "scroll_reveal": "Staggered fade-up for section headers and cards",
+    "hover_states": "Glow border bleed on hover for luxury cards, subtle scale-up on buttons"
+  },
+  "testing_requirements": {
+    "data_testid_rule": "MANDATORY on all buttons, links, form inputs, radios, modals, service cards, theme toggles, and WhatsApp actions.",
+    "sample_testids": [
+      "header-logo",
+      "nav-layanan-link",
+      "nav-manifesto-link",
+      "nav-simulasi-link",
+      "nav-kontak-link",
+      "nav-consultation-btn",
+      "hero-title",
+      "hero-cta-form",
+      "hero-cta-whatsapp",
+      "service-card-badan-usaha",
+      "service-card-virtual-office",
+      "service-card-kbli-46441",
+      "service-card-bpom-import",
+      "service-card-bpom-notification",
+      "service-card-alkes-import",
+      "service-card-layanan-digital",
+      "manifesto-chapter-1",
+      "manifesto-chapter-2",
+      "consultation-form-submit-btn",
+      "consultation-input-name",
+      "consultation-input-phone",
+      "consultation-select-service",
+      "whatsapp-floating-btn",
+      "theme-toggle-btn"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Inject external fonts Google Fonts link in index.html or top of CSS for Cormorant Garamond & Plus Jakarta Sans.",
+    "Build the UI in src/App.js or modular components under src/components/ avoiding missing imports.",
+    "Ensure theme toggling work seamlessly or keep dark mode as the ultra-luxurious primary default theme with gold accents.",
+    "Verify all 7 services mentioned in user choice are prominently featured with full details in Indonesian Bahasa.",
+    "Form must validate inputs using React Hook Form or state validation and render a clear success screen + WhatsApp redirect button upon completion.",
+    "Add 'data-testid' to every interactive element without exception."
+  ]
+}
