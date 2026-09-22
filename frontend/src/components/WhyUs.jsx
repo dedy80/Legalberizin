@@ -22,14 +22,14 @@ export default function WhyUs() {
           Kenapa Legalberizin.id
         </motion.p>
         <motion.h2 {...reveal} transition={{ duration: 0.7, delay: 0.1 }} className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight max-w-2xl">
-          Bukan Sekadar Biro Jasa. <span className="text-gradient">Partner Legal Bisnis Anda.</span>
+          Solusi Legalitas Satu Pintu. <span className="text-gradient">Partner Legal Bisnis Anda.</span>
         </motion.h2>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
           <motion.div {...reveal} transition={{ duration: 0.7, delay: 0.15 }} className="md:col-span-8 lg:col-span-7 relative rounded-2xl overflow-hidden group min-h-[320px]">
             <img
-              src="https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxpbmRvbmVzaWFuJTIwYnVzaW5lc3MlMjB0ZWFtJTIwbWVldGluZyUyMGNvbnN1bHQlMjBvZmZpY2V8ZW58MHx8fHwxNzkwMDM5MTkxfDA&ixlib=rb-4.1.0&q=85"
-              alt="Tim konsultan Legalberizin"
+              src="https://images.unsplash.com/photo-1748336698576-648750d82f86?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+              alt="Gedung pencakar langit Jakarta"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/40 to-transparent" />

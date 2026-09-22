@@ -23,10 +23,16 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 - LegalAI chatbot widget: streaming AI, riwayat chat tersimpan di DB
 - Footer kontak lengkap; dark theme cyan/grafit sesuai logo; font Plus Jakarta Sans + JetBrains Mono
 
+## Update 22 Sep 2026 (iterasi 2)
+- Heading WhyUs diganti: "Solusi Legalitas Satu Pintu. Partner Legal Bisnis Anda." (tanpa kata "biro jasa")
+- Gambar WhyUs diganti foto gedung pencakar langit Jakarta
+- Notifikasi email otomatis ke hredu.pusat@gmail.com setiap ada lead form masuk (Emergent managed Resend, fire-and-forget via asyncio.create_task, terverifikasi 202 Accepted)
+- Testimoni asli: MENUNGGU teks dari user
+
 ## Backlog / Next Tasks
-- P0: (belum ada)
-- P1: Ganti foto/testimoni contoh dengan aset asli klien; tambah alamat kantor lengkap + peta Google Maps
-- P2: Halaman detail per layanan (SEO), blog/artikel legalitas, notifikasi email/WA otomatis saat lead masuk (Resend/Twilio), dashboard admin untuk melihat leads
+- P0: Testimoni asli dari user (menunggu konten)
+- P1: Alamat kantor lengkap + peta Google Maps
+- P2: Halaman detail per layanan (SEO), blog/artikel legalitas, notifikasi WhatsApp otomatis (Twilio), dashboard admin leads
 
 ## Catatan
 - Tidak ada sistem login/auth — test_credentials.md tidak diperlukan.
