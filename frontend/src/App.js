@@ -6,6 +6,8 @@ import Landing from "@/pages/Landing";
 import ServiceDetail from "@/pages/ServiceDetail";
 import BlogList from "@/pages/BlogList";
 import BlogArticle from "@/pages/BlogArticle";
+import AdminLogin from "@/pages/admin/AdminLogin";
+import AdminDashboard from "@/pages/admin/AdminDashboard";
 import Chatbot from "@/components/Chatbot";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/layanan/:slug" element={<ServiceDetail />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
         <Chatbot />
         <Toaster theme="light" position="top-center" richColors />

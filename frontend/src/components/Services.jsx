@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { SERVICES } from "@/data/services";
+import { SERVICES, SERVICE_IMAGES } from "@/data/services";
 
 export default function Services() {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ export default function Services() {
                 <span className="col-span-2 sm:col-span-1 font-mono-alt text-sm text-cyan-500/80 pt-1">
                   0{i + 1}
                 </span>
-                <div className="col-span-10 sm:col-span-10">
+                <div className="col-span-10 sm:col-span-8">
                   <div className="flex items-center gap-3">
                     <Icon className="w-5 h-5 text-sky-600 shrink-0" />
                     <h3 className="text-lg sm:text-xl font-semibold group-hover:text-sky-700 transition-colors duration-300">{s.title}</h3>
@@ -54,6 +54,12 @@ export default function Services() {
                     ))}
                   </div>
                 </div>
+                <img
+                  src={SERVICE_IMAGES[s.slug]}
+                  alt={s.title}
+                  loading="lazy"
+                  className="hidden sm:block col-span-2 w-full h-24 rounded-xl object-cover border border-sky-200 group-hover:scale-[1.03] transition-transform duration-500"
+                />
                 <ArrowUpRight className="hidden sm:block col-span-1 w-6 h-6 text-slate-600 group-hover:text-sky-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 justify-self-end" />
               </motion.div>
             );

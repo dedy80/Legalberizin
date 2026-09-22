@@ -157,6 +157,99 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
+# --- Admin auth (JWT) ---
+import bcrypt
+import jwt as pyjwt
+from fastapi import Depends, Request
+from datetime import timedelta
+
+JWT_ALGORITHM = "HS256"
+MAX_ATTEMPTS = 5
+LOCK_MINUTES = 15
+
+
+def hash_password(password: str) -> str:
+    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+
+
+def verify_password(plain: str, hashed: str) -> bool:
+    return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+
+
+def create_access_token(user_id: str, email: str) -> str:
+    payload = {
+        "sub": user_id, "email": email, "type": "access",
+        "exp": datetime.now(timezone.utc) + timedelta(hours=12),
+    }
+    return pyjwt.encode(payload, os.environ["JWT_SECRET"], algorithm=JWT_ALGORITHM)
+
+
+async def get_current_user(request: Request):
+    auth_header = request.headers.get("Authorization", "")
+    token = auth_header[7:] if auth_header.startswith("Bearer ") else None
+    if not token:
+        raise HTTPException(status_code=401, detail="Tidak terautentikasi")
+    try:
+        payload = pyjwt.decode(token, os.environ["JWT_SECRET"], algorithms=[JWT_ALGORITHM])
+        if payload.get("type") != "access":
+            raise HTTPException(status_code=401, detail="Token tidak valid")
+    except pyjwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail="Token kedaluwarsa, silakan login ulang")
+    except pyjwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail="Token tidak valid")
+    user = await db.users.find_one({"id": payload["sub"]}, {"_id": 0, "password_hash": 0})
+    if not user:
+        raise HTTPException(status_code=401, detail="User tidak ditemukan")
+    return user
+
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+
+@api_router.post("/auth/login")
+async def login(req: LoginRequest, request: Request):
+    email = req.email.strip().lower()
+    identifier = f"{request.client.host}:{email}"
+    attempts = await db.login_attempts.find_one({"identifier": identifier})
+    if attempts and attempts.get("count", 0) >= MAX_ATTEMPTS:
+        locked_until = attempts.get("locked_until", "")
+        if locked_until > datetime.now(timezone.utc).isoformat():
+            raise HTTPException(status_code=429, detail="Terlalu banyak percobaan gagal. Coba lagi dalam 15 menit.")
+    user = await db.users.find_one({"email": email})
+    if not user or not verify_password(req.password, user["password_hash"]):
+        now = datetime.now(timezone.utc)
+        await db.login_attempts.update_one(
+            {"identifier": identifier},
+            {"$inc": {"count": 1}, "$set": {"locked_until": (now + timedelta(minutes=LOCK_MINUTES)).isoformat()}},
+            upsert=True,
+        )
+        raise HTTPException(status_code=401, detail="Email atau password salah")
+    await db.login_attempts.delete_one({"identifier": identifier})
+    token = create_access_token(user["id"], email)
+    return {"token": token, "user": {"email": email, "name": user.get("name", "Admin"), "role": "admin"}}
+
+
+@api_router.get("/auth/me")
+async def auth_me(user=Depends(get_current_user)):
+    return user
+
+
+async def seed_admin():
+    email = os.environ["ADMIN_EMAIL"].strip().lower()
+    password = os.environ["ADMIN_PASSWORD"]
+    existing = await db.users.find_one({"email": email})
+    if existing is None:
+        await db.users.insert_one({
+            "id": str(uuid.uuid4()), "email": email, "password_hash": hash_password(password),
+            "name": "Admin", "role": "admin", "created_at": datetime.now(timezone.utc).isoformat(),
+        })
+    elif not verify_password(password, existing["password_hash"]):
+        await db.users.update_one({"email": email}, {"$set": {"password_hash": hash_password(password)}})
+# --- end admin auth ---
+
+
 class ConsultationCreate(BaseModel):
     name: str
     phone: str
@@ -205,7 +298,7 @@ async def create_consultation(input: ConsultationCreate):
 
 
 @api_router.get("/consultations", response_model=List[Consultation])
-async def list_consultations():
+async def list_consultations(user=Depends(get_current_user)):
     return await db.consultations.find({}, {"_id": 0}).to_list(1000)
 
 
@@ -270,6 +363,41 @@ class BlogPost(BaseModel):
     read_time: str
     published_at: str
     content: Optional[str] = None
+
+
+class BlogPostInput(BaseModel):
+    slug: str
+    title: str
+    excerpt: str
+    category: str
+    read_time: str
+    published_at: str
+    content: str
+
+
+@api_router.post("/blog", response_model=BlogPost)
+async def create_blog_post(input: BlogPostInput, user=Depends(get_current_user)):
+    if await db.blog_posts.find_one({"slug": input.slug}):
+        raise HTTPException(status_code=400, detail="Slug sudah digunakan, ganti judul atau slug")
+    post = BlogPost(**input.model_dump())
+    await db.blog_posts.insert_one(post.model_dump())
+    return post
+
+
+@api_router.put("/blog/{post_id}", response_model=BlogPost)
+async def update_blog_post(post_id: str, input: BlogPostInput, user=Depends(get_current_user)):
+    res = await db.blog_posts.update_one({"id": post_id}, {"$set": input.model_dump()})
+    if res.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Artikel tidak ditemukan")
+    return await db.blog_posts.find_one({"id": post_id}, {"_id": 0})
+
+
+@api_router.delete("/blog/{post_id}")
+async def delete_blog_post(post_id: str, user=Depends(get_current_user)):
+    res = await db.blog_posts.delete_one({"id": post_id})
+    if res.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Artikel tidak ditemukan")
+    return {"ok": True}
 
 
 BLOG_SEED = [
@@ -371,6 +499,9 @@ async def seed_blog():
         for p in BLOG_SEED:
             p.setdefault("id", str(uuid.uuid4()))
         await db.blog_posts.insert_many(BLOG_SEED)
+    await seed_admin()
+    await db.users.create_index("email", unique=True)
+    await db.login_attempts.create_index("identifier")
 # --- end blog ---
 
 

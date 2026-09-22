@@ -243,3 +243,13 @@ export const SERVICES = [
     ],
   },
 ];
+
+export const SERVICE_IMAGES = {
+  "pendirian-pt-cv-yayasan": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop",
+  "virtual-office-jakarta-utara": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+  "sertifikat-standar-kbli-46441": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop",
+  "izin-bpom-kosmetik-impor": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop",
+  "notifikasi-izin-edar-kosmetik-impor": "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
+  "izin-alkes-impor": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop",
+  "layanan-digital-oss": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+};

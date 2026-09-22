@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Bot, Loader2, Send, X } from "lucide-react";
 import { API } from "@/lib/contact";
@@ -9,6 +10,7 @@ const GREETING = {
 };
 
 export default function Chatbot() {
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([GREETING]);
   const [input, setInput] = useState("");
@@ -74,6 +76,8 @@ export default function Chatbot() {
       setBusy(false);
     }
   };
+
+  if (location.pathname.startsWith("/admin")) return null;
 
   return (
     <div data-testid="ai-legal-chatbot" className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">

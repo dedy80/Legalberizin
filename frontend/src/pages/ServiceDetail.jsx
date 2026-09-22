@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, ListChecks, MessageCircle } from "lucide-react";
-import { SERVICES } from "@/data/services";
+import { SERVICES, SERVICE_IMAGES } from "@/data/services";
 import { waLink } from "@/lib/contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -80,6 +80,14 @@ export default function ServiceDetail() {
           <motion.p {...fadeUp(0.3)} className="mt-6 max-w-3xl text-slate-600 text-base sm:text-lg leading-relaxed">
             {service.intro}
           </motion.p>
+
+          <motion.div {...fadeUp(0.35)} className="mt-10 rounded-2xl overflow-hidden border border-sky-200 shadow-lg">
+            <img
+              src={SERVICE_IMAGES[service.slug]}
+              alt={service.title}
+              className="w-full h-56 sm:h-72 object-cover"
+            />
+          </motion.div>
 
           <motion.div {...fadeUp(0.4)} className="mt-8 flex flex-wrap gap-4">
             <a
