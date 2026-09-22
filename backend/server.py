@@ -257,6 +257,123 @@ async def chat(req: ChatRequest):
     )
 
 
+# --- Blog ---
+from fastapi import HTTPException
+
+
+class BlogPost(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    slug: str
+    title: str
+    excerpt: str
+    category: str
+    read_time: str
+    published_at: str
+    content: Optional[str] = None
+
+
+BLOG_SEED = [
+    {
+        "slug": "perbedaan-pt-cv-yayasan",
+        "title": "PT, CV, atau Yayasan: Badan Usaha Mana yang Tepat untuk Bisnis Anda?",
+        "excerpt": "Sebelum mendaftarkan bisnis, pahami dulu perbedaan PT, CV, dan Yayasan — dari tanggung jawab hukum, modal, hingga perpajakannya.",
+        "category": "Badan Usaha",
+        "read_time": "5 menit baca",
+        "published_at": "2026-09-10",
+        "content": """
+<p>Memilih bentuk badan usaha adalah keputusan legal pertama yang menentukan masa depan bisnis Anda. Salah pilih sejak awal bisa berakibat pada tanggung jawab hukum yang tidak perlu, kesulitan mengajukan perizinan lanjutan, hingga beban pajak yang kurang efisien.</p>
+<h2>Perseroan Terbatas (PT)</h2>
+<p>PT adalah badan hukum yang kekayaannya terpisah dari kekayaan pribadi pemiliknya. Artinya, tanggung jawab pemegang saham terbatas pada modal yang disetor. PT cocok untuk bisnis yang ingin berkembang, mencari investor, atau mengikuti tender pemerintah dan perusahaan besar.</p>
+<ul>
+<li>Minimal 2 pendiri (kecuali PT Perorangan untuk UMKM)</li>
+<li>Akta notaris dan pengesahan Kemenkumham</li>
+<li>Modal dasar ditentukan pendiri sesuai UU Cipta Kerja</li>
+<li>Bisa berbentuk PT PMDN (dalam negeri) atau PT PMA (penanaman modal asing)</li>
+</ul>
+<h2>Commanditaire Vennootschap (CV)</h2>
+<p>CV bukan badan hukum, sehingga pendiriannya lebih sederhana dan biayanya lebih rendah. Namun ada dua jenis sekutu: sekutu aktif yang bertanggung jawab penuh sampai harta pribadi, dan sekutu pasif yang hanya menyetor modal. CV cocok untuk usaha kecil-menengah yang belum membutuhkan struktur sekompleks PT.</p>
+<h2>Yayasan</h2>
+<p>Yayasan adalah badan hukum nirlaba untuk kegiatan sosial, keagamaan, dan kemanusiaan. Yayasan tidak memiliki pemilik atau pembagian keuntungan — asetnya dikunci untuk tujuan pendiriannya. Cocok untuk lembaga pendidikan, rumah ibadah, dan organisasi sosial.</p>
+<h2>Jadi, Mana yang Tepat?</h2>
+<p>Pilih PT jika Anda serius membangun bisnis jangka panjang dan butuh perlindungan hukum maksimal. Pilih CV untuk memulai cepat dengan biaya rendah. Pilih Yayasan jika tujuan Anda sosial, bukan profit.</p>
+<p>Masih ragu? Tim Legalberizin.id siap membantu Anda memilih bentuk badan usaha yang paling sesuai melalui konsultasi gratis. Hubungi kami via WhatsApp di 0851-7111-4889.</p>
+""",
+    },
+    {
+        "slug": "panduan-izin-bpom-kosmetik-impor",
+        "title": "Panduan Lengkap Izin BPOM untuk Kosmetik Impor: Syarat & Alurnya",
+        "excerpt": "Kosmetik impor wajib terdaftar di BPOM sebelum dijual. Ini panduan lengkap dokumen, alur registrasi, dan kesalahan yang paling sering terjadi.",
+        "category": "BPOM",
+        "read_time": "7 menit baca",
+        "published_at": "2026-09-14",
+        "content": """
+<p>Indonesia adalah pasar kosmetik yang besar, tetapi setiap produk kosmetik impor wajib memiliki notifikasi dari BPOM sebelum diedarkan. Menjual produk tanpa nomor izin edar berisiko penarikan produk, pemblokiran toko online, hingga sanksi pidana.</p>
+<h2>Dokumen Wajib dari Principal</h2>
+<ul>
+<li><strong>Letter of Appointment (LoA)</strong> — surat penunjukan resmi dari pemilik brand kepada perusahaan Anda sebagai pendaftar di Indonesia.</li>
+<li><strong>Certificate of Free Sale (CFS)</strong> — bukti produk dijual bebas di negara asal, dilegalisasi sesuai ketentuan.</li>
+<li><strong>Sertifikat GMP/CPKB</strong> — bukti produsen menerapkan cara pembuatan kosmetik yang baik.</li>
+<li><strong>Formula lengkap (INCI) dan spesifikasi produk</strong> — termasuk fungsi, cara pakai, dan desain label.</li>
+</ul>
+<h2>Alur Registrasi</h2>
+<p>Pertama, perusahaan Anda didaftarkan pada sistem notifikasi kosmetik BPOM dan lolos verifikasi fasilitas. Kedua, setiap varian produk (SKU) diajukan satu per satu dengan dokumen yang sudah disiapkan. Ketiga, BPOM melakukan evaluasi — umumnya 1 sampai 3 bulan — sebelum nomor notifikasi (NA) terbit.</p>
+<h2>Kesalahan yang Paling Sering Terjadi</h2>
+<ul>
+<li>Klaim berlebihan pada label (misalnya klaim seperti obat) yang membuat pengajuan ditolak.</li>
+<li>Dokumen CFS atau LoA kedaluwarsa atau tidak sesuai format.</li>
+<li>Nama produk tidak konsisten antara dokumen dan label.</li>
+</ul>
+<h2>Tips Mempercepat Persetujuan</h2>
+<p>Pastikan label sudah memenuhi ketentuan BPOM sejak awal, termasuk informasi wajib berbahasa Indonesia. Gunakan konsultan berpengalaman agar tidak bolak-balik revisi. Legalberizin.id mendampingi proses ini dari penyiapan dokumen hingga nomor NA terbit — konsultasi gratis via WhatsApp 0851-7111-4889.</p>
+""",
+    },
+    {
+        "slug": "keuntungan-virtual-office-untuk-bisnis",
+        "title": "5 Keuntungan Virtual Office untuk Legalitas dan Efisiensi Bisnis",
+        "excerpt": "Virtual office bukan sekadar alamat. Ini cara cerdas mendapatkan domisili legal untuk pendirian PT/CV tanpa menguras modal sewa kantor.",
+        "category": "Virtual Office",
+        "read_time": "4 menit baca",
+        "published_at": "2026-09-18",
+        "content": """
+<p>Bagi banyak founder, menyewa kantor fisik di tahun pertama bisnis adalah pemborosan. Virtual office menjawab kebutuhan itu: alamat bisnis resmi tanpa biaya operasional gedung. Berikut lima keuntungannya.</p>
+<h2>1. Domisili Resmi untuk Pendirian Badan Usaha</h2>
+<p>Virtual office di zonasi komersial — seperti layanan kami di Jakarta Utara — sah digunakan sebagai alamat pendirian PT atau CV, pengurusan NIB di OSS, dan NPWP perusahaan. Ini syarat penting yang tidak bisa dipenuhi alamat rumah di banyak daerah.</p>
+<h2>2. Hemat Biaya hingga 90%</h2>
+<p>Dibandingkan sewa kantor konvensional di Jakarta, virtual office hanya membutuhkan biaya sepersennya saja per tahun. Dana yang dihemat bisa dialokasikan ke produk dan pemasaran.</p>
+<h2>3. Citra Profesional</h2>
+<p>Alamat bisnis di kawasan komersial meningkatkan kepercayaan klien, bank, dan calon investor dibanding alamat rumahan.</p>
+<h2>4. Layanan Operasional Pendukung</h2>
+<p>Penerimaan surat dan paket atas nama perusahaan Anda tetap berjalan, sehingga korespondensi resmi tidak pernah terlewat.</p>
+<h2>5. Fleksibel untuk Bisnis Digital</h2>
+<p>Tim bisa bekerja dari mana saja sementara legalitas perusahaan tetap rapi — kombinasi ideal untuk bisnis modern.</p>
+<p>Tertarik? Legalberizin.id menyediakan virtual office di Jakarta Utara lengkap dengan surat domisili resmi. Konsultasi gratis via WhatsApp 0851-7111-4889.</p>
+""",
+    },
+]
+
+
+@api_router.get("/blog", response_model=List[BlogPost])
+async def list_blog_posts():
+    return await db.blog_posts.find({}, {"_id": 0, "content": 0}).sort("published_at", -1).to_list(100)
+
+
+@api_router.get("/blog/{slug}", response_model=BlogPost)
+async def get_blog_post(slug: str):
+    post = await db.blog_posts.find_one({"slug": slug}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Artikel tidak ditemukan")
+    return post
+
+
+@app.on_event("startup")
+async def seed_blog():
+    if await db.blog_posts.count_documents({}) == 0:
+        for p in BLOG_SEED:
+            p.setdefault("id", str(uuid.uuid4()))
+        await db.blog_posts.insert_many(BLOG_SEED)
+# --- end blog ---
+
+
 app.include_router(api_router)
 
 app.add_middleware(

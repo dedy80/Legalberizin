@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
+import BlogSection from "@/components/BlogSection";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import { scrollToId } from "@/lib/contact";
@@ -35,6 +36,7 @@ export default function Landing() {
         <WhyUs />
         <Testimonials />
         <Faq />
+        <BlogSection />
         <LeadForm />
       </main>
       <Footer />

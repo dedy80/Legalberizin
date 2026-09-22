@@ -8,6 +8,7 @@ const LINKS = [
   { label: "Layanan", href: "#layanan" },
   { label: "Keunggulan", href: "#keunggulan" },
   { label: "Testimoni", href: "#testimoni" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "#faq" },
   { label: "Kontak", href: "#kontak" },
 ];
@@ -18,7 +19,9 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const goTo = (href) => {
-    if (location.pathname === "/") {
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else if (location.pathname === "/") {
       scrollToId(href);
     } else {
       navigate("/" + href);
@@ -47,13 +50,7 @@ export default function Navbar() {
           onClick={() => (location.pathname === "/" ? window.__lenis?.scrollTo(0, { duration: 1.4 }) : navigate("/"))}
           className="flex items-center gap-2.5 group"
         >
-          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center font-extrabold text-white text-lg glow-cyan group-hover:scale-105 transition-transform duration-300">
-            L
-          </span>
-          <span className="font-extrabold tracking-tight text-lg">
-            LEGAL<span className="text-gradient">BERIZIN</span>
-            <span className="text-sky-600">.id</span>
-          </span>
+          <img src="/logo.png" alt="Legalberizin.id" className="h-11 w-auto group-hover:scale-105 transition-transform duration-300" />
         </button>
 
         <nav className="hidden lg:flex items-center gap-8">

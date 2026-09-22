@@ -103,6 +103,30 @@
     .marquee-track:hover {
         animation-play-state: paused;
     }
+    .prose-blog h2 {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin: 1.9rem 0 0.75rem;
+        color: #0c2d48;
+    }
+    .prose-blog p {
+        margin: 0.9rem 0;
+        line-height: 1.85;
+        color: #475569;
+    }
+    .prose-blog ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+        color: #475569;
+        line-height: 1.8;
+    }
+    .prose-blog li {
+        margin: 0.4rem 0;
+    }
+    .prose-blog strong {
+        color: #0c2d48;
+    }
 }
 
 @keyframes marquee {

@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "@/App.css";
 import Landing from "@/pages/Landing";
 import ServiceDetail from "@/pages/ServiceDetail";
+import BlogList from "@/pages/BlogList";
+import BlogArticle from "@/pages/BlogArticle";
 import Chatbot from "@/components/Chatbot";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -29,6 +31,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/layanan/:slug" element={<ServiceDetail />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
         </Routes>
         <Chatbot />
         <Toaster theme="light" position="top-center" richColors />

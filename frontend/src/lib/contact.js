@@ -22,3 +22,14 @@ export const scrollToId = (id) => {
     el.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+export const CATEGORY_GRADIENT = {
+  "Badan Usaha": "from-sky-500 to-blue-700",
+  BPOM: "from-cyan-500 to-blue-600",
+  "Virtual Office": "from-blue-600 to-indigo-700",
+};
+
+export const categoryGradient = (c) => CATEGORY_GRADIENT[c] || "from-sky-500 to-blue-700";
+
+export const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });

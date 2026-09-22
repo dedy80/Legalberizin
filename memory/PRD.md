@@ -39,10 +39,14 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 - Navbar/Footer router-aware (dari halaman detail kembali ke section beranda)
 - index.html: meta keywords, OG tags, canonical; public/robots.txt + sitemap.xml (domain legalberizin.id)
 
+## Update 22 Sep 2026 (iterasi 5)
+- Logo asli dari upload user dipasang di navbar, footer, dan favicon (latar putih dihilangkan via PIL → logo.png + logo-icon.png transparan)
+- Blog SEO: backend collection blog_posts + GET /api/blog & /api/blog/{slug}, seed 3 artikel (PT vs CV vs Yayasan, Panduan Izin BPOM Kosmetik Impor, Keuntungan Virtual Office); frontend: section Blog di beranda, /blog listing, /blog/{slug} artikel dengan meta unik; sitemap diperbarui
+
 ## Backlog / Next Tasks
 - P0: Notifikasi WhatsApp otomatis via Twilio — MENUNGGU Account SID & Auth Token dari user; Testimoni asli dari user (menunggu konten)
-- P1: Alamat kantor lengkap + peta Google Maps; daftarkan sitemap ke Google Search Console setelah domain live
-- P2: Blog/artikel legalitas, dashboard admin leads
+- P1: Alamat kantor lengkap + peta Google Maps; daftarkan sitemap ke Google Search Console setelah domain live; tambah artikel blog baru berkala
+- P2: Dashboard admin untuk kelola leads & artikel blog
 
 ## Catatan
 - Tidak ada sistem login/auth — test_credentials.md tidak diperlukan.
