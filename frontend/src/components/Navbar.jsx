@@ -27,7 +27,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
       className={`fixed top-0 inset-x-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
-        scrolled ? "glass border-b border-cyan-400/10" : "bg-transparent"
+        scrolled ? "glass border-b border-sky-200" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
@@ -36,12 +36,12 @@ export default function Navbar() {
           onClick={() => window.__lenis?.scrollTo(0, { duration: 1.4 })}
           className="flex items-center gap-2.5 group"
         >
-          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-sky-700 flex items-center justify-center font-extrabold text-[#0B0F17] text-lg glow-cyan group-hover:scale-105 transition-transform duration-300">
+          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center font-extrabold text-white text-lg glow-cyan group-hover:scale-105 transition-transform duration-300">
             L
           </span>
           <span className="font-extrabold tracking-tight text-lg">
             LEGAL<span className="text-gradient">BERIZIN</span>
-            <span className="text-cyan-400">.id</span>
+            <span className="text-sky-600">.id</span>
           </span>
         </button>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
               key={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
               onClick={() => scrollToId(l.href)}
-              className="text-sm text-slate-400 hover:text-cyan-300 transition-colors duration-300"
+              className="text-sm text-slate-600 hover:text-sky-600 transition-colors duration-300"
             >
               {l.label}
             </button>
@@ -63,7 +63,7 @@ export default function Navbar() {
           href={WA_DEFAULT}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-600 px-5 py-2.5 text-sm font-bold text-[#0B0F17] hover:shadow-[0_0_30px_-5px_rgba(0,240,255,0.6)] hover:-translate-y-0.5 transition-all duration-300"
+          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:shadow-[0_0_30px_-5px_rgba(2,132,199,0.5)] hover:-translate-y-0.5 transition-all duration-300"
         >
           <MessageCircle className="w-4 h-4" />
           Konsultasi Gratis

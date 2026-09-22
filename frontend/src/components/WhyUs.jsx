@@ -16,9 +16,9 @@ const reveal = {
 
 export default function WhyUs() {
   return (
-    <section id="keunggulan" data-testid="why-us-section" className="relative py-28 lg:py-36 bg-[#0E141F]">
+    <section id="keunggulan" data-testid="why-us-section" className="relative py-28 lg:py-36 bg-[#E9F2F8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.p {...reveal} transition={{ duration: 0.6 }} className="font-mono-alt text-xs uppercase tracking-[0.3em] text-cyan-400 mb-6">
+        <motion.p {...reveal} transition={{ duration: 0.6 }} className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">
           Kenapa Legalberizin.id
         </motion.p>
         <motion.h2 {...reveal} transition={{ duration: 0.7, delay: 0.1 }} className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight max-w-2xl">
@@ -35,13 +35,13 @@ export default function WhyUs() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/40 to-transparent" />
             <div className="absolute bottom-0 p-8">
               <p className="font-mono-alt text-xs uppercase tracking-[0.25em] text-cyan-300">Kantor Kami</p>
-              <p className="mt-2 text-xl sm:text-2xl font-bold">Berbasis di Jakarta Utara, melayani seluruh Indonesia.</p>
+              <p className="mt-2 text-xl sm:text-2xl font-bold text-white">Berbasis di Jakarta Utara, melayani seluruh Indonesia.</p>
             </div>
           </motion.div>
 
           <motion.div {...reveal} transition={{ duration: 0.7, delay: 0.25 }} className="md:col-span-8 lg:col-span-5 glass rounded-2xl p-8 flex flex-col justify-center glow-cyan">
             <p className="text-5xl sm:text-6xl font-extrabold text-gradient">1.500+</p>
-            <p className="mt-3 text-slate-300 font-semibold">Izin, akta, dan badan usaha berhasil diterbitkan</p>
+            <p className="mt-3 text-slate-700 font-semibold">Izin, akta, dan badan usaha berhasil diterbitkan</p>
             <p className="mt-2 text-sm text-slate-500">Dipercaya founder, UMKM, hingga perusahaan impor di seluruh Indonesia.</p>
           </motion.div>
 
@@ -53,11 +53,11 @@ export default function WhyUs() {
                 data-testid={`why-us-card-${i + 1}`}
                 {...reveal}
                 transition={{ duration: 0.7, delay: 0.1 + i * 0.08 }}
-                className="md:col-span-4 lg:col-span-3 glass rounded-2xl p-6 hover:border-cyan-400/30 hover:-translate-y-1 transition-all duration-300"
+                className="md:col-span-4 lg:col-span-3 glass rounded-2xl p-6 hover:border-sky-400 hover:-translate-y-1 transition-all duration-300"
               >
-                <Icon className="w-7 h-7 text-cyan-400" />
+                <Icon className="w-7 h-7 text-sky-600" />
                 <h3 className="mt-4 font-semibold">{c.title}</h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{c.desc}</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{c.desc}</p>
               </motion.div>
             );
           })}

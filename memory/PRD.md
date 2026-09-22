@@ -29,10 +29,14 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 - Notifikasi email otomatis ke hredu.pusat@gmail.com setiap ada lead form masuk (Emergent managed Resend, fire-and-forget via asyncio.create_task, terverifikasi 202 Accepted)
 - Testimoni asli: MENUNGGU teks dari user
 
+## Update 22 Sep 2026 (iterasi 3)
+- Tema diubah total dari gelap ke TERANG profesional (putih/biru muda #F4F8FB, aksen biru logo, teks navy #0C2D48, footer navy #0C2D48) atas permintaan user
+- Background hero foto gedung korporat dengan overlay terang
+
 ## Backlog / Next Tasks
-- P0: Testimoni asli dari user (menunggu konten)
+- P0: Notifikasi WhatsApp otomatis via Twilio — MENUNGGU Account SID & Auth Token dari user; Testimoni asli dari user (menunggu konten)
 - P1: Alamat kantor lengkap + peta Google Maps
-- P2: Halaman detail per layanan (SEO), blog/artikel legalitas, notifikasi WhatsApp otomatis (Twilio), dashboard admin leads
+- P2: Halaman detail per layanan (SEO), blog/artikel legalitas, dashboard admin leads
 
 ## Catatan
 - Tidak ada sistem login/auth — test_credentials.md tidak diperlukan.

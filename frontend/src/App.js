@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="noise bg-[#0B0F17] text-slate-50 min-h-screen antialiased overflow-x-clip" data-testid="app-root">
+    <div className="noise bg-[#F4F8FB] text-[#0C2D48] min-h-screen antialiased overflow-x-clip" data-testid="app-root">
       <Navbar />
       <main>
         <Hero />
@@ -43,7 +43,7 @@ export default function App() {
       </main>
       <Footer />
       <Chatbot />
-      <Toaster theme="dark" position="top-center" richColors />
+      <Toaster theme="light" position="top-center" richColors />
     </div>
   );
 }

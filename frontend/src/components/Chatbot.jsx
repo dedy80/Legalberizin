@@ -87,10 +87,10 @@ export default function Chatbot() {
             className="w-[calc(100vw-40px)] sm:w-[380px] h-[520px] max-h-[70vh] glass rounded-2xl overflow-hidden flex flex-col glow-cyan"
             data-testid="chatbot-panel"
           >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-cyan-400/10 bg-[#111827]/80">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-sky-200 bg-white/80">
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-sky-700 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-[#0B0F17]" />
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-white" />
                 </span>
                 <div>
                   <p className="font-bold text-sm">LegalAI Assistant</p>
@@ -99,7 +99,7 @@ export default function Chatbot() {
                   </p>
                 </div>
               </div>
-              <button data-testid="chatbot-close-button" onClick={() => setOpen(false)} className="text-slate-500 hover:text-slate-200 transition-colors">
+              <button data-testid="chatbot-close-button" onClick={() => setOpen(false)} className="text-slate-400 hover:text-slate-700 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -110,30 +110,30 @@ export default function Chatbot() {
                   <div
                     className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                       m.role === "user"
-                        ? "bg-gradient-to-r from-cyan-400 to-sky-600 text-[#0B0F17] font-medium rounded-br-sm"
-                        : "bg-[#1a2433] text-slate-200 rounded-bl-sm"
+                        ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-br-sm"
+                        : "bg-sky-50 text-slate-700 rounded-bl-sm"
                     }`}
                   >
-                    {m.content || (busy && i === messages.length - 1 ? <Loader2 className="w-4 h-4 animate-spin text-cyan-400" /> : "")}
+                    {m.content || (busy && i === messages.length - 1 ? <Loader2 className="w-4 h-4 animate-spin text-sky-600" /> : "")}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="px-4 py-3 border-t border-cyan-400/10 bg-[#111827]/80 flex items-center gap-2">
+            <div className="px-4 py-3 border-t border-sky-200 bg-white/80 flex items-center gap-2">
               <input
                 data-testid="chatbot-input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && send()}
                 placeholder="Tanya seputar legalitas & izin..."
-                className="flex-1 bg-[#0B0F17]/70 border border-cyan-400/15 rounded-full px-4 py-2.5 text-sm placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 transition-colors"
+                className="flex-1 bg-white border border-sky-200 rounded-full px-4 py-2.5 text-sm text-[#0C2D48] placeholder:text-slate-400 focus:outline-none focus:border-sky-500 transition-colors"
               />
               <button
                 data-testid="chatbot-send-button"
                 onClick={send}
                 disabled={busy || !input.trim()}
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-400 to-sky-600 flex items-center justify-center text-[#0B0F17] disabled:opacity-50 hover:scale-105 transition-transform"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-white disabled:opacity-50 hover:scale-105 transition-transform"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -147,7 +147,7 @@ export default function Chatbot() {
         onClick={() => setOpen((o) => !o)}
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
-        className="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-sky-700 flex items-center justify-center text-[#0B0F17] glow-cyan"
+        className="w-14 h-14 rounded-full bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center text-white glow-cyan"
         aria-label="Buka LegalAI Assistant"
       >
         {open ? <X className="w-6 h-6" /> : <Bot className="w-7 h-7" />}

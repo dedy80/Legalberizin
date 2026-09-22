@@ -17,7 +17,7 @@ const SERVICE_OPTIONS = [
 ];
 
 const inputCls =
-  "w-full rounded-xl bg-[#0B0F17]/70 border border-cyan-400/15 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300";
+  "w-full rounded-xl bg-white border border-sky-200 px-4 py-3 text-sm text-[#0C2D48] placeholder:text-slate-600 focus:outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/15 transition-all duration-300";
 
 export default function LeadForm() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: SERVICE_OPTIONS[0], message: "" });
@@ -45,7 +45,7 @@ export default function LeadForm() {
 
   return (
     <section id="konsultasi" data-testid="consultation-lead-form" className="relative py-28 lg:py-36 overflow-hidden">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-cyan-500/10 blur-[140px] -z-10" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-cyan-500/10 blur-[140px]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,24 +54,24 @@ export default function LeadForm() {
           transition={{ duration: 0.7 }}
           className="lg:col-span-5"
         >
-          <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-cyan-400 mb-6">Mulai Sekarang</p>
+          <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">Mulai Sekarang</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
             Ceritakan Kebutuhan Anda. <span className="text-gradient">Sisanya Biar Kami.</span>
           </h2>
-          <p className="mt-6 text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed">
             Isi form konsultasi — tim kami akan menghubungi Anda maksimal 1×24 jam. Atau langsung chat untuk respon tercepat.
           </p>
           <div className="mt-10 space-y-5">
             <a data-testid="contact-wa-row" href={waLink("Halo Legalberizin.id, saya ingin konsultasi.")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center group-hover:border-cyan-400/40 transition-colors"><MessageCircle className="w-5 h-5 text-cyan-400" /></span>
-              <div><p className="text-xs text-slate-500">WhatsApp</p><p className="font-semibold group-hover:text-cyan-300 transition-colors">{WA_DISPLAY}</p></div>
+              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center group-hover:border-sky-400 transition-colors"><MessageCircle className="w-5 h-5 text-sky-600" /></span>
+              <div><p className="text-xs text-slate-500">WhatsApp</p><p className="font-semibold group-hover:text-sky-600 transition-colors">{WA_DISPLAY}</p></div>
             </a>
             <a data-testid="contact-email-row" href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
-              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center group-hover:border-cyan-400/40 transition-colors"><Mail className="w-5 h-5 text-cyan-400" /></span>
-              <div><p className="text-xs text-slate-500">Email</p><p className="font-semibold group-hover:text-cyan-300 transition-colors">{EMAIL}</p></div>
+              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center group-hover:border-sky-400 transition-colors"><Mail className="w-5 h-5 text-sky-600" /></span>
+              <div><p className="text-xs text-slate-500">Email</p><p className="font-semibold group-hover:text-sky-600 transition-colors">{EMAIL}</p></div>
             </a>
             <div data-testid="contact-location-row" className="flex items-center gap-4">
-              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center"><MapPin className="w-5 h-5 text-cyan-400" /></span>
+              <span className="w-11 h-11 rounded-xl glass flex items-center justify-center"><MapPin className="w-5 h-5 text-sky-600" /></span>
               <div><p className="text-xs text-slate-500">Kantor</p><p className="font-semibold">{LOCATION}</p></div>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function LeadForm() {
             <div>
               <label className="block text-xs font-mono-alt uppercase tracking-[0.2em] text-slate-500 mb-2">Layanan</label>
               <select data-testid="lead-form-service" className={inputCls} value={form.service} onChange={set("service")}>
-                {SERVICE_OPTIONS.map((s) => <option key={s} value={s} className="bg-[#111827]">{s}</option>)}
+                {SERVICE_OPTIONS.map((s) => <option key={s} value={s} className="bg-white">{s}</option>)}
               </select>
             </div>
             <div className="sm:col-span-2">
@@ -113,7 +113,7 @@ export default function LeadForm() {
             data-testid="lead-form-submit-button"
             type="submit"
             disabled={loading}
-            className="mt-7 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-600 px-7 py-4 font-bold text-[#0B0F17] hover:shadow-[0_0_40px_-5px_rgba(0,240,255,0.6)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:hover:translate-y-0"
+            className="mt-7 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-4 font-bold text-white hover:shadow-[0_0_40px_-5px_rgba(0,240,255,0.6)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:hover:translate-y-0"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-4 h-4" />}
             {loading ? "Mengirim..." : "Kirim Permintaan Konsultasi"}

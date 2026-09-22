@@ -26,7 +26,7 @@ const FAQS = [
 
 export default function Faq() {
   return (
-    <section id="faq" data-testid="faq-accordion-section" className="py-28 lg:py-36 bg-[#0E141F]">
+    <section id="faq" data-testid="faq-accordion-section" className="py-28 lg:py-36 bg-[#E9F2F8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,11 +35,11 @@ export default function Faq() {
           transition={{ duration: 0.7 }}
           className="lg:col-span-5"
         >
-          <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-cyan-400 mb-6">FAQ</p>
+          <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">FAQ</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
             Pertanyaan yang <span className="text-gradient">Sering Diajukan.</span>
           </h2>
-          <p className="mt-6 text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed">
             Tidak menemukan jawaban? Tanya langsung ke LegalAI Assistant di pojok kanan bawah, atau hubungi tim kami via WhatsApp.
           </p>
         </motion.div>
@@ -53,11 +53,11 @@ export default function Faq() {
         >
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-cyan-400/10" data-testid={`faq-item-${i + 1}`}>
-                <AccordionTrigger className="text-left font-semibold hover:text-cyan-300 hover:no-underline py-6" data-testid={`faq-trigger-${i + 1}`}>
+              <AccordionItem key={i} value={`faq-${i}`} className="border-sky-200" data-testid={`faq-item-${i + 1}`}>
+                <AccordionTrigger className="text-left font-semibold hover:text-sky-700 hover:no-underline py-6" data-testid={`faq-trigger-${i + 1}`}>
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-400 leading-relaxed" data-testid={`faq-content-${i + 1}`}>
+                <AccordionContent className="text-slate-600 leading-relaxed" data-testid={`faq-content-${i + 1}`}>
                   {f.a}
                 </AccordionContent>
               </AccordionItem>

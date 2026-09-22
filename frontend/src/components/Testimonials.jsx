@@ -23,7 +23,7 @@ export default function Testimonials() {
   return (
     <section id="testimoni" data-testid="testimonials-section" className="py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-cyan-400 mb-6">Kata Mereka</p>
+        <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">Kata Mereka</p>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight max-w-2xl">
           Dipercaya Para <span className="text-gradient">Penggerak Bisnis.</span>
         </h2>
@@ -37,14 +37,14 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="glass rounded-2xl p-8 flex flex-col hover:border-cyan-400/30 hover:-translate-y-1 transition-all duration-300"
+              className="glass rounded-2xl p-8 flex flex-col hover:border-sky-400 hover:-translate-y-1 transition-all duration-300"
             >
-              <Quote className="w-6 h-6 text-cyan-400" />
-              <blockquote className="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed flex-1">“{t.text}”</blockquote>
-              <figcaption className="mt-6 pt-5 border-t border-cyan-400/10">
+              <Quote className="w-6 h-6 text-sky-600" />
+              <blockquote className="mt-5 text-slate-700 text-sm sm:text-base leading-relaxed flex-1">“{t.text}”</blockquote>
+              <figcaption className="mt-6 pt-5 border-t border-sky-200">
                 <p className="font-semibold flex items-center gap-1.5">
                   {t.name}
-                  <BadgeCheck className="w-4 h-4 text-cyan-400" />
+                  <BadgeCheck className="w-4 h-4 text-sky-600" />
                 </p>
                 <p className="text-xs text-slate-500 mt-0.5">{t.role}</p>
               </figcaption>

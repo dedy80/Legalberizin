@@ -53,11 +53,11 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
-            <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-cyan-400 mb-6">Manifesto Layanan</p>
+            <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">Manifesto Layanan</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
               Tujuh Bab Menuju <span className="text-gradient">Bisnis yang Sah.</span>
             </h2>
-            <p className="mt-6 text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed">
               Setiap layanan ditangani konsultan berpengalaman dengan alur jelas, estimasi waktu transparan, dan update progres berkala.
             </p>
           </div>
@@ -77,26 +77,26 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative grid grid-cols-12 gap-4 sm:gap-6 items-start py-8 sm:py-10 border-t border-cyan-400/10 hover:bg-cyan-400/[0.03] transition-colors duration-500"
+                className="group relative grid grid-cols-12 gap-4 sm:gap-6 items-start py-8 sm:py-10 border-t border-sky-200 hover:bg-sky-50 transition-colors duration-500"
               >
                 <span className="col-span-2 sm:col-span-1 font-mono-alt text-sm text-cyan-500/80 pt-1">
                   0{i + 1}
                 </span>
                 <div className="col-span-10 sm:col-span-10">
                   <div className="flex items-center gap-3">
-                    <Icon className="w-5 h-5 text-cyan-400 shrink-0" />
-                    <h3 className="text-lg sm:text-xl font-semibold group-hover:text-cyan-300 transition-colors duration-300">{s.title}</h3>
+                    <Icon className="w-5 h-5 text-sky-600 shrink-0" />
+                    <h3 className="text-lg sm:text-xl font-semibold group-hover:text-sky-700 transition-colors duration-300">{s.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl">{s.desc}</p>
+                  <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">{s.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {s.tags.map((t) => (
-                      <span key={t} className="rounded-full border border-cyan-400/15 px-3 py-1 text-xs text-slate-500 group-hover:text-cyan-300/80 group-hover:border-cyan-400/30 transition-colors duration-300">
+                      <span key={t} className="rounded-full border border-sky-200 px-3 py-1 text-xs text-slate-500 group-hover:text-sky-700/80 group-hover:border-sky-400 transition-colors duration-300">
                         {t}
                       </span>
                     ))}
                   </div>
                 </div>
-                <ArrowUpRight className="hidden sm:block col-span-1 w-6 h-6 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 justify-self-end" />
+                <ArrowUpRight className="hidden sm:block col-span-1 w-6 h-6 text-slate-600 group-hover:text-sky-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 justify-self-end" />
               </motion.a>
             );
           })}
