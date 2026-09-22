@@ -1,53 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Building2, MapPin, FlaskConical, ShieldCheck, FileCheck2, Pill, MonitorSmartphone } from "lucide-react";
-import { waLink } from "@/lib/contact";
-
-const SERVICES = [
-  {
-    icon: Building2,
-    title: "Pendirian Badan Usaha",
-    desc: "PT, PT PMDN/PMA, PT Perorangan, CV, hingga Yayasan — lengkap dengan akta notaris, SK Kemenkumham, NPWP, dan NIB melalui OSS-RBA.",
-    tags: ["PT", "PT PMA", "CV", "Yayasan"],
-  },
-  {
-    icon: MapPin,
-    title: "Virtual Office",
-    desc: "Alamat bisnis legal dan prestisius di Jakarta Utara dengan zonasi komersial, surat domisili resmi, dan dukungan operasional kantor.",
-    tags: ["Jakarta Utara", "Domisili Resmi", "Zonasi Komersial"],
-  },
-  {
-    icon: FlaskConical,
-    title: "Sertifikat Standar KBLI 46441",
-    desc: "Pengurusan sertifikat standar terverifikasi untuk perdagangan besar farmasi — syarat wajib distribusi produk obat dan kesehatan.",
-    tags: ["KBLI 46441", "Farmasi", "OSS-RBA"],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Izin BPOM Kosmetik Impor",
-    desc: "Pendampingan registrasi BPOM untuk kosmetik impor: penyiapan dokumen legalitas, Letter of Appointment, CFS, hingga persyaratan GMP.",
-    tags: ["BPOM", "Kosmetik Impor", "Registrasi"],
-  },
-  {
-    icon: FileCheck2,
-    title: "Notifikasi Izin Edar Kosmetik Impor",
-    desc: "Pengajuan notifikasi kosmetik impor hingga terbit nomor izin edar (NA) sehingga produk Anda sah dan aman dipasarkan di Indonesia.",
-    tags: ["Notifikasi NA", "Izin Edar", "Kosmetik"],
-  },
-  {
-    icon: Pill,
-    title: "Izin Alkes Impor",
-    desc: "Izin Penyalur Alat Kesehatan (IPAK) dan registrasi izin edar alat kesehatan impor dari Kemenkes — dari nol sampai terbit.",
-    tags: ["IPAK", "Kemenkes", "Alkes Impor"],
-  },
-  {
-    icon: MonitorSmartphone,
-    title: "Layanan Digital",
-    desc: "Percepatan NIB/OSS, perubahan akta & anggaran dasar, PKP, serta dukungan digital untuk operasional bisnis modern Anda.",
-    tags: ["NIB / OSS", "PKP", "Perubahan Akta"],
-  },
-];
+import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { SERVICES } from "@/data/services";
 
 export default function Services() {
+  const navigate = useNavigate();
   return (
     <section id="layanan" data-testid="services-manifesto-section" className="relative py-28 lg:py-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
@@ -58,7 +15,7 @@ export default function Services() {
               Tujuh Bab Menuju <span className="text-gradient">Bisnis yang Sah.</span>
             </h2>
             <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed">
-              Setiap layanan ditangani konsultan berpengalaman dengan alur jelas, estimasi waktu transparan, dan update progres berkala.
+              Setiap layanan ditangani konsultan berpengalaman dengan alur jelas, estimasi waktu transparan, dan update progres berkala. Klik layanan untuk detail lengkap.
             </p>
           </div>
         </div>
@@ -67,17 +24,18 @@ export default function Services() {
           {SERVICES.map((s, i) => {
             const Icon = s.icon;
             return (
-              <motion.a
+              <motion.div
                 key={s.title}
+                role="link"
+                tabIndex={0}
                 data-testid={`service-chapter-${i + 1}`}
-                href={waLink(`Halo Legalberizin.id, saya ingin konsultasi layanan: ${s.title}`)}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => navigate(`/layanan/${s.slug}`)}
+                onKeyDown={(e) => e.key === "Enter" && navigate(`/layanan/${s.slug}`)}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative grid grid-cols-12 gap-4 sm:gap-6 items-start py-8 sm:py-10 border-t border-sky-200 hover:bg-sky-50 transition-colors duration-500"
+                className="group relative grid grid-cols-12 gap-4 sm:gap-6 items-start py-8 sm:py-10 border-t border-sky-200 hover:bg-sky-50 transition-colors duration-500 cursor-pointer"
               >
                 <span className="col-span-2 sm:col-span-1 font-mono-alt text-sm text-cyan-500/80 pt-1">
                   0{i + 1}
@@ -97,7 +55,7 @@ export default function Services() {
                   </div>
                 </div>
                 <ArrowUpRight className="hidden sm:block col-span-1 w-6 h-6 text-slate-600 group-hover:text-sky-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 justify-self-end" />
-              </motion.a>
+              </motion.div>
             );
           })}
         </div>

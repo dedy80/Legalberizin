@@ -1,7 +1,17 @@
 import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { EMAIL, LOCATION, WA_DEFAULT, WA_DISPLAY, scrollToId } from "@/lib/contact";
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const goTo = (href) => {
+    if (location.pathname === "/") {
+      scrollToId(href);
+    } else {
+      navigate("/" + href);
+    }
+  };
   return (
     <footer id="kontak" data-testid="contact-footer-section" className="border-t border-white/10 bg-[#0C2D48]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-10">

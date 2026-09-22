@@ -33,10 +33,16 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 - Tema diubah total dari gelap ke TERANG profesional (putih/biru muda #F4F8FB, aksen biru logo, teks navy #0C2D48, footer navy #0C2D48) atas permintaan user
 - Background hero foto gedung korporat dengan overlay terang
 
+## Update 22 Sep 2026 (iterasi 4)
+- 7 halaman detail SEO per layanan: /layanan/{slug} (react-router), masing-masing dengan meta title/description unik, H1, manfaat, alur proses, persyaratan, FAQ, dan CTA WhatsApp
+- Data layanan terpusat di src/data/services.js; kartu layanan di beranda sekarang menuju halaman detail
+- Navbar/Footer router-aware (dari halaman detail kembali ke section beranda)
+- index.html: meta keywords, OG tags, canonical; public/robots.txt + sitemap.xml (domain legalberizin.id)
+
 ## Backlog / Next Tasks
 - P0: Notifikasi WhatsApp otomatis via Twilio — MENUNGGU Account SID & Auth Token dari user; Testimoni asli dari user (menunggu konten)
-- P1: Alamat kantor lengkap + peta Google Maps
-- P2: Halaman detail per layanan (SEO), blog/artikel legalitas, dashboard admin leads
+- P1: Alamat kantor lengkap + peta Google Maps; daftarkan sitemap ke Google Search Console setelah domain live
+- P2: Blog/artikel legalitas, dashboard admin leads
 
 ## Catatan
 - Tidak ada sistem login/auth — test_credentials.md tidak diperlukan.

@@ -1,15 +1,9 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "@/App.css";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import Services from "@/components/Services";
-import WhyUs from "@/components/WhyUs";
-import Testimonials from "@/components/Testimonials";
-import Faq from "@/components/Faq";
-import LeadForm from "@/components/LeadForm";
-import Footer from "@/components/Footer";
+import Landing from "@/pages/Landing";
+import ServiceDetail from "@/pages/ServiceDetail";
 import Chatbot from "@/components/Chatbot";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -30,20 +24,15 @@ export default function App() {
   }, []);
 
   return (
-    <div className="noise bg-[#F4F8FB] text-[#0C2D48] min-h-screen antialiased overflow-x-clip" data-testid="app-root">
-      <Navbar />
-      <main>
-        <Hero />
-        <Marquee />
-        <Services />
-        <WhyUs />
-        <Testimonials />
-        <Faq />
-        <LeadForm />
-      </main>
-      <Footer />
-      <Chatbot />
-      <Toaster theme="light" position="top-center" richColors />
-    </div>
+    <BrowserRouter>
+      <div className="noise bg-[#F4F8FB] text-[#0C2D48] min-h-screen antialiased overflow-x-clip" data-testid="app-root">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/layanan/:slug" element={<ServiceDetail />} />
+        </Routes>
+        <Chatbot />
+        <Toaster theme="light" position="top-center" richColors />
+      </div>
+    </BrowserRouter>
   );
 }
