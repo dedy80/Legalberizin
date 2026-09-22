@@ -49,6 +49,9 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 - Chatbot disembunyikan di halaman /admin
 - Kredensial admin: admin@legalberizin.id / Legal2026!Berizin (lihat test_credentials.md)
 
+## Update 22 Sep 2026 (iterasi 7)
+- Hero jadi dua kolom: headline kiri + foto model profesional kanan (bingkai rounded miring, glow biru, 2 kartu mengambang animasi float)
+
 ## Backlog / Next Tasks
 - P0: Notifikasi WhatsApp otomatis via Twilio — MENUNGGU Account SID & Auth Token dari user; Testimoni asli dari user (menunggu konten)
 - P1: Alamat kantor lengkap + peta Google Maps; daftarkan sitemap ke Google Search Console setelah domain live
