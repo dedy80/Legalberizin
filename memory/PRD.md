@@ -52,6 +52,10 @@ Buatkan website untuk branding Legalberizin.id — usaha konsultan legalitas & p
 ## Update 22 Sep 2026 (iterasi 7)
 - Hero jadi dua kolom: headline kiri + foto model profesional kanan (bingkai rounded miring, glow biru, 2 kartu mengambang animasi float)
 
+## Update 22 Sep 2026 (iterasi 8)
+- Layanan alkes dipecah jadi 3: Izin Distribusi Alat Kesehatan (IDAK, pengganti IPAK), Sertifikat CDAKB, Izin Edar Alkes Impor (AKL) — total 9 layanan
+- Update terkait: daftar layanan, gambar, marquee, form konsultasi, chatbot system prompt, sitemap, stat "09 Layanan"
+
 ## Backlog / Next Tasks
 - P0: Notifikasi WhatsApp otomatis via Twilio — MENUNGGU Account SID & Auth Token dari user; Testimoni asli dari user (menunggu konten)
 - P1: Alamat kantor lengkap + peta Google Maps; daftarkan sitemap ke Google Search Console setelah domain live

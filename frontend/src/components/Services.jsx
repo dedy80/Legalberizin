@@ -12,7 +12,7 @@ export default function Services() {
           <div className="lg:sticky lg:top-32">
             <p className="font-mono-alt text-xs uppercase tracking-[0.3em] text-sky-600 mb-6">Manifesto Layanan</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
-              Tujuh Bab Menuju <span className="text-gradient">Bisnis yang Sah.</span>
+              Sembilan Bab Menuju <span className="text-gradient">Bisnis yang Sah.</span>
             </h2>
             <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed">
               Setiap layanan ditangani konsultan berpengalaman dengan alur jelas, estimasi waktu transparan, dan update progres berkala. Klik layanan untuk detail lengkap.

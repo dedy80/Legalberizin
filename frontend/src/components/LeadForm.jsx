@@ -11,7 +11,9 @@ const SERVICE_OPTIONS = [
   "Sertifikat Standar KBLI 46441",
   "Izin BPOM Kosmetik Impor",
   "Notifikasi Izin Edar Kosmetik Impor",
-  "Izin Alkes Impor",
+  "Izin Distribusi Alat Kesehatan (IDAK)",
+  "Sertifikat CDAKB",
+  "Izin Edar Alat Kesehatan Impor (AKL)",
   "Layanan Digital (NIB / OSS / PKP)",
   "Lainnya",
 ];

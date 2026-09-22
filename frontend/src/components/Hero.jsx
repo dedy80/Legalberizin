@@ -18,7 +18,7 @@ const RevealLine = ({ children, delay = 0 }) => (
 
 const STATS = [
   { value: "1.500+", label: "Izin & Badan Usaha Terbit" },
-  { value: "07", label: "Layanan Spesialis" },
+  { value: "09", label: "Layanan Spesialis" },
   { value: "24/7", label: "LegalAI Assistant Siaga" },
 ];
 

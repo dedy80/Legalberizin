@@ -6,7 +6,7 @@ import { API } from "@/lib/contact";
 
 const GREETING = {
   role: "assistant",
-  content: "Halo! Saya LegalAI, asisten virtual Legalberizin.id. Ada yang bisa saya bantu seputar pendirian PT/CV, virtual office, izin BPOM, atau alkes impor?",
+  content: "Halo! Saya LegalAI, asisten virtual Legalberizin.id. Ada yang bisa saya bantu seputar pendirian PT/CV, virtual office, izin BPOM, atau perizinan alkes (IDAK/CDAKB/AKL)?",
 };
 
 export default function Chatbot() {

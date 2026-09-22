@@ -276,8 +276,10 @@ Layanan Legalberizin.id:
 3. Sertifikat Standar KBLI 46441 (perdagangan besar farmasi/obat untuk manusia).
 4. Izin BPOM Kosmetik Impor (registrasi produk, LoA, CFS, dokumen GMP).
 5. Notifikasi Izin Edar Kosmetik Impor (nomor NA).
-6. Izin Alkes Impor (IPAK, izin edar alat kesehatan Kemenkes).
-7. Layanan Digital (NIB/OSS, perubahan akta, PKP, company profile).
+6. Izin Distribusi Alat Kesehatan (IDAK, pengganti IPAK, dari Kemenkes).
+7. Sertifikat CDAKB (Cara Distribusi Alat Kesehatan yang Baik).
+8. Izin Edar Alat Kesehatan Impor (AKL) dari Kemenkes.
+9. Layanan Digital (NIB/OSS, perubahan akta, PKP, company profile).
 
 Kontak: WhatsApp 085171114889, email hredu.pusat@gmail.com, kantor di Jakarta Utara.
 

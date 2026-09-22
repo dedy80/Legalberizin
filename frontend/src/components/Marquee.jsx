@@ -4,7 +4,9 @@ const ITEMS = [
   "Sertifikat Standar KBLI 46441",
   "Izin BPOM Kosmetik Impor",
   "Notifikasi Izin Edar",
-  "Izin Alkes Impor",
+  "IDAK Penyalur Alkes",
+  "Sertifikat CDAKB",
+  "Izin Edar AKL Impor",
   "Layanan Digital & OSS",
 ];
 
