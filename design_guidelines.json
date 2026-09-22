@@ -1,0 +1,124 @@
+{
+  "project_name": "Legalberizin.id",
+  "app_type": "landing_page",
+  "design_philosophy": {
+    "archetype": "Swiss & High-Contrast Cyber-Corporate",
+    "tone": "Authoritative, Premium, Cutting-Edge, Indonesian Business Focus",
+    "experience_goal": "Awwwards Site-of-the-Day level landing experience combining dark graphite elegance, vivid cyan kinetic illumination, line-by-line reveal animations, and frictionless legal lead generation."
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "background": "#0B0F17",
+      "surface_dark": "#111827",
+      "surface_card": "#161F2C",
+      "surface_border": "rgba(0, 240, 255, 0.15)",
+      "primary_cyan": "#00F0FF",
+      "primary_blue": "#0284C7",
+      "gradient_cyan_blue": "linear-gradient(135deg, #00F0FF 0%, #0284C7 100%)",
+      "gradient_dark_graphite": "linear-gradient(180deg, #111827 0%, #0B0F17 100%)",
+      "text_main": "#F9FAFB",
+      "text_muted": "#9CA3AF",
+      "accent_emerald": "#10B981",
+      "whatsapp_green": "#25D366"
+    }
+  },
+  "typography": {
+    "heading_font": "Plus Jakarta Sans, sans-serif",
+    "body_font": "Inter, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
+      "section_heading": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "card_title": "text-lg sm:text-xl font-semibold",
+      "caption": "text-xs uppercase tracking-[0.2em] font-mono text-cyan-400"
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "p-4, p-6, p-8, p-12, p-16, p-24, p-32",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "grid_modes": {
+      "tetris_bento": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:gap-8",
+      "service_manifesto": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+    }
+  },
+  "key_features_and_components": [
+    {
+      "name": "Header & Dynamic Glass Navigation",
+      "description": "Sticky backdrop-blur header with glowing Legalberizin.id cyan logo, quick navigation links (Layanan, Simulator, AI Assistant, Kontak), and WhatsApp direct trigger.",
+      "data_testid": "main-header-nav"
+    },
+    {
+      "name": "Kinetic Hero Section",
+      "description": "Bold typography with line-by-line staggered reveal, dynamic stats ticker (1,500+ PT & Izin Terbit), dual CTAs ('Konsultasi Gratis' + 'Chat WhatsApp Direct').",
+      "data_testid": "hero-section"
+    },
+    {
+      "name": "7 Service Chapters (Manifesto Style 01-07)",
+      "description": "Interactive numbered chapters detailing PT/CV/Yayasan, Virtual Office Jakarta Utara, Sertifikat KBLI 46441, BPOM Kosmetik Import, Notifikasi Izin Edar, Izin Alkes Import, & Layanan Digital.",
+      "data_testid": "services-manifesto-section"
+    },
+    {
+      "name": "AI Legal Consultation Chatbot Widget ('LegalAI Assistant')",
+      "description": "Floating and embedded AI Legal Chat assistant answering questions on PT requirements, KBLI codes, BPOM registration steps, and estimated budget.",
+      "data_testid": "ai-legal-chatbot"
+    },
+    {
+      "name": "Consultation Lead Form",
+      "description": "Interactive multi-step consultation booking form storing inquiries to backend DB with instant WhatsApp notification link.",
+      "data_testid": "consultation-lead-form"
+    },
+    {
+      "name": "WhatsApp Direct Integration CTA",
+      "description": "Dedicated floating widget and banner linking directly to WA 085171114889 with pre-filled consultation templates.",
+      "data_testid": "whatsapp-cta-button"
+    },
+    {
+      "name": "Testimonials & Trust Metrics",
+      "description": "Client success stories from CEOs and business founders in Jakarta Utara and Indonesia with verification badges.",
+      "data_testid": "testimonials-section"
+    },
+    {
+      "name": "FAQ Accordion",
+      "description": "Categorized FAQ with live search for quick answers regarding legal compliance and permit duration.",
+      "data_testid": "faq-accordion-section"
+    },
+    {
+      "name": "Contact & Office Location Map",
+      "description": "Jakarta Utara office details, email hredu.pusat@gmail.com, telephone, and interactive location card.",
+      "data_testid": "contact-footer-section"
+    }
+  ],
+  "image_urls": {
+    "jakarta_skyline_dusk": "https://images.unsplash.com/photo-1580968129299-c9809833a1ae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBqYWthcnRhJTIwb2ZmaWNlJTIwc2t5c2NyYXBlciUyMGN5YW4lMjBibHVlJTIwZHVza3xlbnwwfHx8fDE3OTAwMzkxOTF8MA&ixlib=rb-4.1.0&q=85",
+    "business_team_consult": "https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxpbmRvbmVzaWFuJTIwYnVzaW5lc3MlMjB0ZWFtJTIwbWVldGluZyUyMGNvbnN1bHQlMjBvZmZpY2V8ZW58MHx8fHwxNzkwMDM5MTkxfDA&ixlib=rb-4.1.0&q=85",
+    "modern_corporate_office": "https://images.pexels.com/photos/8357123/pexels-photo-8357123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "consultation_meeting": "https://images.unsplash.com/photo-1605220061884-e9019d7bf027?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwzfHxpbmRvbmVzaWFuJTIwYnVzaW5lc3MlMjB0ZWFtJTIwbWVldGluZyUyMGNvbnN1bHQlMjBvZmZpY2V8ZW58MHx8fHwxNzkwMDM5MTkxfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "contact_info": {
+    "brand": "Legalberizin.id",
+    "whatsapp": "085171114889",
+    "whatsapp_link": "https://wa.me/6285171114889?text=Halo%20Legalberizin.id,%20saya%20ingin%20konsultasi%20pendirian%20usaha%20dan%20perizinan",
+    "email": "hredu.pusat@gmail.com",
+    "location": "Jakarta Utara, Indonesia"
+  },
+  "instructions_to_main_agent": [
+    "Ensure all components are built using modular React (.js/.jsx) with Tailwind CSS.",
+    "Include data-testid attributes on all interactive elements, buttons, forms, and cards.",
+    "Use backdrop-blur-xl glassmorphism for floating components with border-cyan-500/20 strokes.",
+    "Implement the 7 core services with distinct manifesto chapter numbers (01 to 07).",
+    "Integrate the consultation submission endpoint /api/consultations for storing lead data.",
+    "Add responsive WhatsApp quick action triggers with number 085171114889.",
+    "Provide a realistic interactive AI Legal Chatbot simulation pre-populated with Indonesian business permit knowledge."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Avoid generic centered layouts; use bold asymmetric grid structures with generous spacing.",
+    "Layer elements with subtle ambient cyan glow drop-shadows and glass border strokes.",
+    "DO NOT use raw transparent backgrounds on dropdowns or modals - always use backdrop-blur and semi-opaque dark surface.",
+    "Ensure high text contrast ratios (minimum 4.5:1) for legibility against dark backgrounds."
+  ]
+},
+overwrite: true,
+path: "/app/design_guidelines.json"
+}
+} Pillow header instructions parsing verified logic.
